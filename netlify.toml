@@ -1,0 +1,21 @@
+# Netlify configuration for Movement Team Physiotherapy website.
+# The site is a single static file — no build step, no dependencies.
+# Netlify just needs to know which folder to publish.
+
+[build]
+  # No build command needed for a plain static site.
+  command = ""
+  # The folder that contains index.html.
+  publish = "movement-team"
+
+# Long-cache the fonts/assets but always revalidate the HTML so edits go live.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"

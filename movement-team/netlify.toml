@@ -1,0 +1,10 @@
+# Used when this folder itself is the site root
+# (e.g. drag-and-drop this folder into Netlify, or set base = "movement-team").
+[build]
+  command = ""
+  publish = "."
+
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
